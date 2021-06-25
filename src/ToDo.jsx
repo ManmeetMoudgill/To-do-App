@@ -1,0 +1,18 @@
+import React from 'react'
+import './listitem.css'
+
+function ToDo(props) {
+
+
+    return (
+        <div className="ToDoListDelete">
+            <button onClick={()=>{
+                props.Selected(props.id)
+            }} className="deleteButton">x</button>
+            <li className="list-Item">{props.text}</li>
+        </div>
+        )
+   
+}
+
+export default ToDo

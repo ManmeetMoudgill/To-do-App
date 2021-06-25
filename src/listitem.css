@@ -1,0 +1,19 @@
+.ToDoListDelete {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+}
+.deleteButton:hover{
+    background-color:red;
+    border:transparent;
+}
+.deleteButton{
+width:25px;
+height:25px;
+background-color:rgb(215, 101, 230);
+border-radius: 1rem;
+border: transparent;
+color:white;
+font-weight:bolder;
+margin-left:30px;
+}
