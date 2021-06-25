@@ -42,13 +42,21 @@ function App() {
 const deleteItem=(id)=>{
     console.log(id)
     /* we are using call back function in setArrData function */
-    setArrData(()=>{
-        /* here we are using filter whichh it self use call back function */
-        return arrData.filter((arrElement,index)=>{
-            /* return if two ids does not match if they match then delete the toDoList item */
-            return id!==index;
+    var answer=window.prompt("Do you really wanna delete the ToDo please enter Y for yess , N for no");
+    if(answer=="y" || answer=="Y"){
+        setArrData(()=>{
+            /* here we are using filter whichh it self use call back function */
+            return arrData.filter((arrElement,index)=>{
+                /* return if two ids does not match if they match then delete the toDoList item */
+                return id!==index;
+            })
         })
-    })
+
+        setData("")
+    }else{
+        alert("You have decied to not delete the ToDo")
+    }
+
     
 }
    
