@@ -1,5 +1,6 @@
 import React from 'react'
 import './listitem.css'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function ToDo(props) {
 
@@ -8,7 +9,7 @@ function ToDo(props) {
         <div className="ToDoListDelete">
             <button onClick={()=>{
                 props.Selected(props.id)
-            }} className="deleteButton">x</button>
+            }} className="deleteButton"><DeleteIcon/></button>
             <li className="list-Item">{props.text}</li>
         </div>
         )

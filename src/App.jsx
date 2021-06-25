@@ -1,6 +1,9 @@
 import React,{useState} from 'react'
 import './main.css'
 import ToDo  from './ToDo'
+import AddIcon from '@material-ui/icons/Add';
+import Input from '@material-ui/core/Input';
+
 function App() {
     const [data,setData]=useState("")
     const [arrData,setArrData]=useState([])
@@ -44,6 +47,7 @@ const deleteItem=(id)=>{
     /* we are using call back function in setArrData function */
     var answer=window.prompt("Do you really wanna delete the ToDo please enter Y for yess , N for no");
     if(answer=="y" || answer=="Y"){
+        
         setArrData(()=>{
             /* here we are using filter whichh it self use call back function */
             return arrData.filter((arrElement,index)=>{
@@ -66,14 +70,15 @@ const deleteItem=(id)=>{
             <div className="main-inside-div">
             <h1>ToDo-List</h1>
             <div className="input-div">
+            
             <input type="text" id="input" onKeyUp={keyPressed} onClick={NoBorder} value={data} onChange={dataChanged} placeholder="Add a Item" />
-            <button className="btn"  onClick={addNote} >+</button>
+            <button className="btn"  onClick={addNote} ><AddIcon/></button>
             </div>
             <div className="Node-Taken">
           <ol>
               {arrData.map((valore,index)=>{
                  return (
-                 <ToDo text={valore} key={index} Selected={deleteItem} id={index } indexNumber={index}/>
+                 <ToDo text={valore} key={index} Selected={deleteItem} id={index} indexNumber={index}/>
               )})}
           </ol>
             </div>
